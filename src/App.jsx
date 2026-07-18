@@ -28,7 +28,10 @@ function App() {
     }
   };
 
-  const handleNoHover = () => {
+  const handleNoHover = (e) => {
+    if (e?.type === 'touchstart') {
+      e.preventDefault();
+    }
     if (noClicks < 5) {
       const maxX = window.innerWidth * 0.4;
       const maxY = window.innerHeight * 0.4;
@@ -156,8 +159,9 @@ function App() {
                 <motion.button
                   ref={noButtonRef}
                   className={`no-btn ${noClicks >= 5 ? 'no-btn-heart' : ''}`}
-                  onMouseEnter={handleNoHover}
-                  onClick={handleNoHover}
+                  onMouseEnter={noClicks >= 5 ? null : handleNoHover}
+                  onClick={noClicks >= 5 ? handleYes : handleNoHover}
+                  onTouchStart={noClicks >= 5 ? handleYes : handleNoHover}
                   animate={{ x: noPosition.x, y: noPosition.y }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >

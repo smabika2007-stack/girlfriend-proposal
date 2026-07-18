@@ -337,3 +337,23 @@
   0% { transform: rotate(-20deg); }
   100% { transform: rotate(20deg); }
 }
+
+@media (max-width: 600px) {
+  .name-input {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+  .continue-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  .greeting {
+    font-size: 1.8rem;
+  }
+  .the-question {
+    font-size: 2rem;
+  }
+  .card-container {
+    padding: 20px;
+  }
+}
