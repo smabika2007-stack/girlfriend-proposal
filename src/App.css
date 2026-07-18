@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap');
+
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.hearts-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart-bg-item {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: rotate(45deg);
+  animation: floatUp 10s linear infinite;
+}
+.heart-bg-item::before, .heart-bg-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+.heart-bg-item::before {
+  top: -10px;
+  left: 0;
+}
+.heart-bg-item::after {
+  top: 0;
+  left: -10px;
+}
+
+/* Generate 20 random positions and delays for hearts */
+.heart-0 { left: 10%; animation-delay: 0s; transform: rotate(45deg) scale(0.8); }
+.heart-1 { left: 25%; animation-delay: 2s; transform: rotate(45deg) scale(1.2); }
+.heart-2 { left: 40%; animation-delay: 4s; transform: rotate(45deg) scale(0.9); }
+.heart-3 { left: 55%; animation-delay: 1s; transform: rotate(45deg) scale(1.5); }
+.heart-4 { left: 70%; animation-delay: 3s; transform: rotate(45deg) scale(0.7); }
+.heart-5 { left: 85%; animation-delay: 5s; transform: rotate(45deg) scale(1.1); }
+.heart-6 { left: 15%; animation-delay: 6s; transform: rotate(45deg) scale(1.3); }
+.heart-7 { left: 30%; animation-delay: 1.5s; transform: rotate(45deg) scale(0.6); }
+.heart-8 { left: 45%; animation-delay: 7s; transform: rotate(45deg) scale(1.4); }
+.heart-9 { left: 60%; animation-delay: 2.5s; transform: rotate(45deg) scale(0.8); }
+.heart-10 { left: 75%; animation-delay: 8s; transform: rotate(45deg) scale(1.2); }
+.heart-11 { left: 90%; animation-delay: 3.5s; transform: rotate(45deg) scale(0.9); }
+.heart-12 { left: 5%; animation-delay: 9s; transform: rotate(45deg) scale(1.5); }
+.heart-13 { left: 20%; animation-delay: 4.5s; transform: rotate(45deg) scale(0.7); }
+.heart-14 { left: 35%; animation-delay: 10s; transform: rotate(45deg) scale(1.1); }
+.heart-15 { left: 50%; animation-delay: 0.5s; transform: rotate(45deg) scale(1.3); }
+.heart-16 { left: 65%; animation-delay: 5.5s; transform: rotate(45deg) scale(0.6); }
+.heart-17 { left: 80%; animation-delay: 11s; transform: rotate(45deg) scale(1.4); }
+.heart-18 { left: 95%; animation-delay: 6.5s; transform: rotate(45deg) scale(0.8); }
+.heart-19 { left: 50%; animation-delay: 12s; transform: rotate(45deg) scale(1.2); }
+
+@keyframes floatUp {
+  0% { top: 110vh; opacity: 1; }
+  100% { top: -10vh; opacity: 0; }
+}
+
+.cursive {
+  font-family: 'Dancing Script', cursive;
+}
+
+.card-container {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(255, 105, 180, 0.3);
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.sender {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #ff1493;
+  margin-bottom: 20px;
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  transform: rotate(5deg);
+  background: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.greeting {
+  color: #c71585;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.instruction {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.name-input {
+  padding: 15px;
+  border: 2px solid #ffb6c1;
+  border-radius: 10px;
+  font-size: 2rem;
+  color: #ff1493;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.name-input:focus {
+  border-color: #ff1493;
+  box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+}
+
+.continue-btn {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+}
+
+.question-title {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #ff1493;
+  font-size: 2.8rem;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.question-text {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.the-question {
+  color: #c71585;
+  font-size: 2.5rem;
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 40px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  position: relative;
+  width: 100%;
+}
+
+.yes-btn, .no-btn {
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4);
+}
+
+.yes-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(50, 205, 50, 0.6);
+}
+
+.no-btn {
+  background: linear-gradient(135deg, #ff6347 0%, #dc143c 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
+
+.no-btn-heart {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+  padding: 12px 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.6);
+}
+
+.pulse-heart {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.celebration-title {
+  font-size: 4rem;
+  color: #ff1493;
+  margin-bottom: 20px;
+}
+
+.celebration-text {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.big-heart {
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.3); }
+  70% { transform: scale(1); }
+}
+
+.heart-shape-btn {
+  background: linear-gradient(135deg, #ff1493 0%, #c71585 100%);
+  color: white;
+  width: 100px;
+  height: 90px;
+  clip-path: path('M50 85 C50 85 10 55 10 30 C10 15 25 10 35 20 C45 30 50 40 50 40 C50 40 55 30 65 20 C75 10 90 15 90 30 C90 55 50 85 50 85 Z');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 0;
+}
+
+.heart-shape-btn:hover {
+  transform: scale(1.1);
+}
+
+.yes-text {
+  margin-top: -15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.no-btn {
+  position: relative;
+}
+
+.legs-container {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.leg {
+  width: 4px;
+  height: 15px;
+  background-color: #333;
+  border-radius: 2px;
+  transform-origin: top;
+}
+
+.leg-left {
+  animation: run 0.2s alternate infinite;
+}
+
+.leg-right {
+  animation: run 0.2s alternate-reverse infinite;
+}
+
+@keyframes run {
+  0% { transform: rotate(-20deg); }
+  100% { transform: rotate(20deg); }
+}
